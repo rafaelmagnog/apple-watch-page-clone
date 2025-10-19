@@ -1,8 +1,8 @@
 # 🍎 Apple Watch Page Clone
 
 [![Status](https://img.shields.io/badge/status-Completed-brightgreen)](README.en.md)
-[![Language: EN](https://img.shields.io/badge/Language-English-green)](README.en.md)
-[![Language: PT-BR](https://img.shields.io/badge/Language-Portuguese-red)](README.md)
+[![Language: PT-BR](https://img.shields.io/badge/Language-Portuguese-green)](README.md)
+[![Language: EN](https://img.shields.io/badge/Language-English-red)](README.en.md)
 [![Stack](https://img.shields.io/badge/Stack-JavaScript%20|%20HTML%20|%20CSS-lightyellow)](README.en.md)
 
 A project developed as part of the **JavaScript Intensive Course** by [Hashtag Dev](https://www.hashtagtreinamentos.com/).
