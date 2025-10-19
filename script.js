@@ -1,21 +1,42 @@
 const imagemVisualizacao = document.querySelector("#visualizacao img");
 const tituloProduto = document.querySelector("h1");
+const nomeCorSelecionada = document.querySelector("#nome-cor-selecionada");
+const imagemMiniatura0 = document.querySelector('[for="0-imagem"] img ');
+const imagemMiniatura1 = document.querySelector('[for="1-imagem"] img ');
+const imagemMiniatura2 = document.querySelector('[for="2-imagem"] img ');
 
 const opcoesTamanho = ["41 mm", "45 mm"];
-const opcoesCor = [];
+const opcoesCores = [
+  "Verde-cipreste",
+  "Azul-inverno",
+  "Meia-noite",
+  "Estelar",
+  "Rosa-claro",
+];
 
 let numTamanhoSelecionado = 1;
 let numImagemSelecionada = 1;
 let numCorSelecionada = 1;
 
-function atualizarCor() {
+function atualizarCorSelecionada() {
   const opcaoCorSelecionada = document
     .querySelector('[name="opcao-cor"]:checked')
     .id.charAt(0);
 
   numCorSelecionada = opcaoCorSelecionada;
 
-  imagemVisualizacao.src = `./imagens/opcoes-cores/imagens-azul-inverno/imagem-${numImagemSelecionada}.jpeg`;
+  const nomeCor = opcoesCores[numCorSelecionada];
+
+  tituloProduto.innerText = `Pulseira loop esportiva ${nomeCor.toLowerCase()} para caixa de ${
+    opcoesTamanho[numTamanhoSelecionado]
+  }`;
+
+  nomeCorSelecionada.innerText = `Cor - ${nomeCor}`;
+
+  imagemVisualizacao.src = `./imagens/opcoes-cores/imagens-${nomeCor.toLowerCase()}/imagem-${numImagemSelecionada}.jpeg`;
+  imagemMiniatura0.src = `./imagens/opcoes-cores/imagens-${nomeCor.toLowerCase()}/imagem-0.jpeg`;
+  imagemMiniatura1.src = `./imagens/opcoes-cores/imagens-${nomeCor.toLowerCase()}/imagem-1.jpeg`;
+  imagemMiniatura2.src = `./imagens/opcoes-cores/imagens-${nomeCor.toLowerCase()}/imagem-2.jpeg`;
 }
 
 function atualizarTamanho() {
@@ -29,7 +50,9 @@ function atualizarTamanho() {
 
   console.log(tamanhoCaixa);
 
-  tituloProduto.innerText = `Pulseira loop esportiva ${opcoesCor[numCorSelecionada]} para caixa de ${tamanhoCaixa}`;
+  tituloProduto.innerText = `Pulseira loop esportiva ${opcoesCores[
+    numCorSelecionada
+  ].toLowerCase()} para caixa de ${tamanhoCaixa}`;
 
   tamanhoCaixa === "41 mm"
     ? imagemVisualizacao.classList.add("caixa-pequena")
@@ -43,7 +66,7 @@ function atualizarImagemSelecionada() {
 
   numImagemSelecionada = opcaoImagemSelecionada;
 
-  imagemVisualizacao.src = `./imagens/opcoes-cores/imagens-azul-inverno/imagem-${numImagemSelecionada}.jpeg`;
+  imagemVisualizacao.src = `./imagens/opcoes-cores/imagens-${opcoesCores[
+    numCorSelecionada
+  ].toLowerCase()}/imagem-${numImagemSelecionada}.jpeg`;
 }
-
-//atualizarTamanho();
